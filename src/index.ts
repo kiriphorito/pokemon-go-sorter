@@ -1,9 +1,14 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import pokedex from '../data/pokemon.json';
-import greatLeagueOverallRankings from '../data/great-overall-league.json';
-import ultraLeagueOverallRankings from '../data/ultra-overall-league.json';
-import { Pokemon } from './domain/model/Pokemon';
+import { Pokemon, fromPvPokePokemon } from './domain/model/Pokemon';
+import { searchPokemon } from './domain/service/searchPokemon';
+import { haveEnoughAbove80IV } from './domain/service/rules/haveEnoughAbove80IV';
+import { KiriphoritoPlayerPokemon } from './infrastructure/KiriphoritoPlayerPokemon';
+import { LeagueOrder } from "./domain/model/LeagueRanking";
+import { getAllRankingsForPokemon } from "./domain/service/getRankingsForPokemon";
+import { validatePokemonsHasAllOfNothingFamilyIdAndConsistent } from "./domain/service/validation/validatePokemonsHasAllOfNothingFamilyIdAndConsistent";
+import { isOfHighEnoughRankAcrossFamily } from "./domain/service/rules/isOfHighEnoughRankAcrossFamily";
 
 dotenv.config();
 
@@ -16,12 +21,28 @@ app.get("/", (req: Request, res: Response) => {
 
 app.get("/pvp", async (req: Request, res: Response) => {
     const pokemonRanking = await searchPvp(req.query.search as string);
-    const rankingMinimum = process.env.RANKING_MINIMUM ? 150 : Number(process.env.RANKING_MINIMUM);
-    const filteredPokemonRanking = pokemonRanking.filter((rank) => rank < rankingMinimum);
+    const rankingMinimum = !process.env.RANKING_MINIMUM ? 150 : Number(process.env.RANKING_MINIMUM);
+    const filteredPokemonRanking = pokemonRanking.filter((rank) => rank.speciesRank < rankingMinimum);
+    const responseRanking = pokemonRanking.map((ranking) => {
+        return {
+            league: ranking.league,
+            speciesRank: ranking.speciesRank,
+            speciesName: ranking.pokemon.speciesName
+        }
+    }).sort((a, b) => (LeagueOrder[a.league] || 0) - (LeagueOrder[b.league] || 0) || a.speciesRank - b.speciesRank)
     if (filteredPokemonRanking.length == 0) {
-        res.send({ delete: true });
+        res.send(
+            { 
+                delete: true,
+                rankings: responseRanking
+            }
+        );
     } else {
-        res.send({ delete: false });
+        res.send(
+            { 
+                delete: false,
+                rankings: responseRanking
+            });
     }
   });
 
@@ -30,58 +51,14 @@ app.listen(port, () => {
 });
 
 const searchPvp = async (nameSearch: string) => {
-    const filteredPokemon: any[] = pokedex.filter(
-        (pokemon) => {
-            return pokemon.speciesName.toLowerCase().substring(0, nameSearch.length).includes(nameSearch.toLowerCase());
-        }
-    );
+    const searchedPokemon: Pokemon[] = searchPokemon(nameSearch);
+    console.log(searchedPokemon);
 
-    if (filteredPokemon.length == 0) {
+    if (searchedPokemon.length == 0) {
         throw new TypeError(`Cannot find the any Pokemon with the following search term: ${nameSearch}`);
     }
 
-    const distinctFamily = new Set<string>();
-    filteredPokemon.map((pokemon) => {
-        if (pokemon.family?.id) {
-            distinctFamily.add(pokemon.family.id);
-        }
-    });
+    validatePokemonsHasAllOfNothingFamilyIdAndConsistent(searchedPokemon);
 
-    if (distinctFamily.size > 1) {
-        throw new TypeError('Error message');
-    }
-
-    const allPokemonInFamily = getAllByFamilyId([...distinctFamily][0]);
-    const allPokemonSpeciesId = allPokemonInFamily.map((pokemon) => {
-        return pokemon.speciesId;
-    });
-
-    const rankings = getAllRankingsForPokemon(allPokemonSpeciesId)
-    return rankings;
+    return isOfHighEnoughRankAcrossFamily(searchedPokemon)
 } 
-
-const getAllByFamilyId = (familyId: string) => {
-    return pokedex.filter(
-        (pokemon) => {
-            // @ts-ignore
-            return pokemon.family?.id === familyId;
-        }
-    );
-}
-
-const getAllRankingsForPokemon = (speciesId: string[]) => {
-    return [
-        ...getRankingsForPokemon(speciesId, greatLeagueOverallRankings),
-        ...getRankingsForPokemon(speciesId, ultraLeagueOverallRankings)
-    ];
-}
-
-const getRankingsForPokemon = (speciesId: string[], rankings: any[]) => {
-    const filteredRankings: number[] = [];
-    for (const [index, pokemon] of rankings.entries()) {
-        if (speciesId.includes(pokemon.speciesId)) {
-            filteredRankings.push(index);
-        }
-    }
-    return filteredRankings;
-}
