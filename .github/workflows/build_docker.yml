@@ -1,0 +1,25 @@
+name: "Build Docker"
+
+on:
+  push
+
+jobs:
+  build:
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v4
+      - name: "Output SHA"
+        id: "output_sha"
+        run: echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+      - name: "Echo output_sha"
+        run: echo ${{ steps.output_sha.outputs.sha }} >> $GITHUB_STEP_SUMMARY
+      - name: "Build docker image"
+        run: docker build -t ${{ github.event.repository.name }}:${{ steps.output_sha.outputs.sha }} .
+      - name: "Export docker image to tar"
+        run: docker save ${{ github.event.repository.name }}:${{ steps.output_sha.outputs.sha }} > ${{ github.event.repository.name }}_${{ steps.output_sha.outputs.sha }}.tar
+      - name: "Persist tar"
+        uses: actions/upload-artifact@v4
+        with:
+          name: "docker-image"
+          path: ${{ github.event.repository.name }}_${{ steps.output_sha.outputs.sha }}.tar
+          retention-days: 7
