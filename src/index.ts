@@ -9,6 +9,7 @@ import { LeagueOrder } from "./domain/model/LeagueRanking";
 import { getAllRankingsForPokemon } from "./domain/service/getRankingsForPokemon";
 import { validatePokemonsHasAllOfNothingFamilyIdAndConsistent } from "./domain/service/validation/validatePokemonsHasAllOfNothingFamilyIdAndConsistent";
 import { isOfHighEnoughRankAcrossFamily } from "./domain/service/rules/isOfHighEnoughRankAcrossFamily";
+import { getAverageIVFromStats, getAverageIVFromHexStats } from "./domain/service/getAverageIVFromStats";
 
 dotenv.config();
 
@@ -18,6 +19,24 @@ const port = process.env.PORT || 3000;
 app.get("/", (req: Request, res: Response) => {
   res.send(pokedex[0]);
 });
+
+app.get("/iv/average", async (req: Request, res: Response) => {
+    const attackStat = req.query.attack as string;
+    const defenseStat = req.query.defense as string;
+    const hpStat = req.query.hp as string;
+    const hexStats = req.query.hex as string;
+    if (!(!!hexStats !== (!!attackStat && !!defenseStat && !!hpStat))) {
+        throw new Error("You need to provide all attack, defense and hp stats!")
+    }
+    res.send({
+        attack: attackStat,
+        defense: defenseStat,
+        hp: hpStat,
+        avgIV: !!hexStats 
+            ? getAverageIVFromHexStats(hexStats)
+            : getAverageIVFromStats(Number(attackStat), Number(defenseStat), Number(hpStat)),
+    });
+})
 
 app.get("/pvp", async (req: Request, res: Response) => {
     const pokemonRanking = await searchPvp(req.query.search as string);

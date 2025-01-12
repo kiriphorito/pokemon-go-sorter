@@ -1,14 +1,14 @@
 import { Gender } from "./Pokemon";
+import { IndividualValues } from "./IndividualValues";
 
 export class PlayerPokemon {
   dexId: number;
   gender: Gender;
-  avgIV: number;
+  iv?: IndividualValues;
 
-  constructor(dexId: number, gender: Gender, avgIV: number) {
+  constructor(dexId: number, gender: Gender, iv?: IndividualValues) {
     this.dexId = dexId;
     this.gender = gender;
-    this.avgIV = avgIV;
+    this.iv =iv;
   }
-
 }

@@ -18,8 +18,11 @@ export function haveEnoughAbove80IV(pokemon: Pokemon, playerPokemons: PlayerPoke
   })
 
   const filteredPlayerPokemon = playerPokemons.filter((pmon) => {
+    if (!pmon.iv) {
+      return false;
+    }
     return dexIds.includes(pmon.dexId)
-      && pmon.avgIV > 80;
+      && pmon.iv.avgIV > 80;
   });
 
   return filteredPlayerPokemon.length > numberOfPokemonInFamily;
