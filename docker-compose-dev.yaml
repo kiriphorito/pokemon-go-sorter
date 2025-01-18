@@ -1,0 +1,9 @@
+services:
+  database:
+    image: postgres:17.2
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=pokemon-go-sorter
+      - POSTGRES_USER=pokemon-go-sorter
+      - POSTGRES_DB=pokemon-go-sorter
