@@ -8,6 +8,11 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - name: "Install deps"
+        run: pnpm install --frozen-lockfile
+      - name: "Run tests"
+        run: pnpm test
       - name: "Output SHA"
         id: "output_sha"
         run: echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
