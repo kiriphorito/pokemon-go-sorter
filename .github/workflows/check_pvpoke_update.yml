@@ -1,0 +1,24 @@
+name: "Check Pvpoke Update"
+
+on:
+  schedule:
+    - cron: "0 0/12 * * *"
+  workflow_dispatch:
+
+jobs:
+  check_pvpoke_update:
+    runs-on: "ubuntu-latest"
+    steps:
+    - uses: actions/checkout@v4
+    - name: "Run pvpoke download script"
+      run: bash ./scripts/download_pvpoke_data.sh
+    - name: "Check for changes"
+      id: changed-files
+      uses: tj-actions/changed-files@v45
+    - name: Run step if test file(s) change
+      if: steps.changed-files.outputs.any_changed == 'true'
+      env:
+        ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+      run: |
+        echo "One or more test file(s) has changed."
+        echo "List all the files that have changed: $ALL_CHANGED_FILES"
