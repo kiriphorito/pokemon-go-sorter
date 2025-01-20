@@ -12,13 +12,12 @@ jobs:
     - uses: actions/checkout@v4
     - name: "Run pvpoke download script"
       run: bash ./scripts/download_pvpoke_data.sh
-    - name: "Check for changes"
-      id: changed-files
-      uses: tj-actions/changed-files@v45
-    - name: Run step if test file(s) change
-      if: steps.changed-files.outputs.any_changed == 'true'
+    - name: Verify Changed files
+      uses: tj-actions/verify-changed-files@v20
+      id: verify-changed-files
+    - name: Run step only when any of the above files change.
+      if: steps.verify-changed-files.outputs.files_changed == 'true'
       env:
-        ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+        CHANGED_FILES: ${{ steps.verify-changed-files.outputs.changed_files }}
       run: |
-        echo "One or more test file(s) has changed."
-        echo "List all the files that have changed: $ALL_CHANGED_FILES"
+        echo "Changed files: $CHANGED_FILES"
