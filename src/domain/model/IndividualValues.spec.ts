@@ -1,14 +1,21 @@
-import { IndividualValues } from "./IndividualValues";
+import * as IndividualValues from "./IndividualValues";
 
-describe('IndividualValues works correctly', () => {
-  it('it should validate entered stats', async () => {
-    expect(() => new IndividualValues(1, undefined, undefined, undefined)).not.toThrow();
-    expect(() => new IndividualValues(undefined, 1, 1, 2)).not.toThrow();
-    expect(() => new IndividualValues(9, 1, 1, 2)).not.toThrow();
-    expect(() => new IndividualValues(10, 1, 1, 2)).toThrow();
-    expect(() => new IndividualValues(undefined, undefined, undefined, undefined)).toThrow();
-    expect(() => new IndividualValues(undefined, undefined, 1, 2)).toThrow();
-    expect(() => new IndividualValues(undefined, 1, undefined, 2)).toThrow();
-    expect(() => new IndividualValues(undefined, 1, 1, undefined)).toThrow();
+describe('IndividualValues', () => {
+  it('fromStats should create correct object', async () => {
+    expect(IndividualValues.fromStats(1, 2, 3)).toEqual({
+      avgIV: 13,
+      attack: 1,
+      defense: 2,
+      hp: 3,
+    })
+  });
+
+  it('fromAverageIV should create correct object', async () => {
+    expect(IndividualValues.fromAverageIV(98)).toEqual({
+      avgIV: 98,
+      attack: undefined,
+      defense: undefined,
+      hp: undefined,
+    })
   });
 });
