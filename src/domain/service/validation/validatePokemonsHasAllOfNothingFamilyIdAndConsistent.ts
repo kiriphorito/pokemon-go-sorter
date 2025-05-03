@@ -13,11 +13,11 @@ export function validatePokemonsHasAllOfNothingFamilyIdAndConsistent(pokemon: Po
     return true;
   });
 
-  if (!!inconsistentFamilyPokemon) {
+  if (inconsistentFamilyPokemon) {
     throw new Error("The seems to be a mix of Pokemon with and without familyId or mix of families!");
   }
 
-  if (!!firstPokemonHaveFamilyId) {
+  if (firstPokemonHaveFamilyId) {
     return;
   }
 
@@ -30,7 +30,7 @@ export function validatePokemonsHasAllOfNothingFamilyIdAndConsistent(pokemon: Po
     return !pmon.speciesName.includes(words[0]);
   });
 
-  if (!!inconsistentSpeciesNamePokemon) {
+  if (inconsistentSpeciesNamePokemon) {
     throw new Error("The seems to be a mix of Pokemon without familyId but not a common species prefix!");
   }
 }

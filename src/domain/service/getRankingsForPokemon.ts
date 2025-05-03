@@ -3,8 +3,8 @@ import { League, LeagueRanking } from "../model/LeagueRanking";
 
 const getAllRankingsForPokemon = (pokemon: any[]) => {
   return [
-      ...getRankingsForPokemon(pokemon, League.Great),
-      ...getRankingsForPokemon(pokemon, League.Ultra)
+    ...getRankingsForPokemon(pokemon, League.Great),
+    ...getRankingsForPokemon(pokemon, League.Ultra)
   ];
 }
 
