@@ -3,7 +3,7 @@ import { Pokemon, fromPvPokePokemon } from '../model/Pokemon';
 
 export function searchPokemon(search: string, isShadow?: boolean): Pokemon[] {
   if (!search) {
-      throw new Error("Search term is blank!")
+    throw new Error("Search term is blank!")
   }
 
   const pokemons: Pokemon[] = fromPvPokePokemon(pokedex);
