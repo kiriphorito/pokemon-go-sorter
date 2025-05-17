@@ -1,5 +1,8 @@
 import express, { Express, Request, Response } from "express";
+
 import dotenv from "dotenv";
+dotenv.config();
+
 import pokedex from '../data/pokemon.json';
 import { Pokemon, fromPvPokePokemon } from './domain/model/Pokemon';
 import { searchPokemon } from './domain/service/searchPokemon';
@@ -10,11 +13,33 @@ import { getAllRankingsForPokemon } from "./domain/service/getRankingsForPokemon
 import { validatePokemonsHasAllOfNothingFamilyIdAndConsistent } from "./domain/service/validation/validatePokemonsHasAllOfNothingFamilyIdAndConsistent";
 import { isOfHighEnoughRankAcrossFamily } from "./domain/service/rules/isOfHighEnoughRankAcrossFamily";
 import { getAverageIVFromStats, getAverageIVFromHexStats } from "./domain/service/getAverageIVFromStats";
+import playerPokemonRouter from "./presentation/PlayerPokemonRouter";
 
-dotenv.config();
+
+
+
+import knexInstance from "./db/index";
+import {findPokemonByUserId} from "./infrastructure/persistance/JdbcPlayerPokemonRepository";
 
 const app: Express = express();
+app.use(express.json())
+
 const port = process.env.PORT || 3000;
+
+const knex = knexInstance;
+knex.migrate.latest()
+
+app.use(playerPokemonRouter)
+
+app.get("/test", async (req, res) => {
+  findPokemonByUserId(2).then((result) => {
+    console.log(result);
+    res.send(result);
+  }).catch((error) => {
+    console.error(error);
+    res.status(500).send("Error retrieving data");
+  });
+})
 
 app.get("/", (req: Request, res: Response) => {
   res.send(pokedex[0]);

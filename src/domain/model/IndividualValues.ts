@@ -2,17 +2,9 @@ import { getAverageIVFromStats } from "../service/getAverageIVFromStats";
 
 export interface IndividualValues {
   avgIV: number;
-  attack?: number;
-  defense?: number;
-  hp?: number;
-}
-
-export function fromAverageIV(
-  avgIV: number,
-): IndividualValues {
-  return {
-    avgIV,
-  };
+  attack: number;
+  defense: number;
+  hp: number;
 }
 
 export function fromStats(
