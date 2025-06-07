@@ -1,0 +1,14 @@
+services:
+  app:
+    container_name: pokemon-go-sorter
+    image: pokemon-go-sorter:latest
+    env_file: .env
+    ports:
+      - "3050:3000"
+
+  database:
+    container_name: pokemon-go-sorter-db
+    image: postgres:17.5
+    env_file: .env
+    volumes:
+      - ./data:/var/lib/postgresql/data
