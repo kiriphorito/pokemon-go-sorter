@@ -1,9 +1,24 @@
-import { PlayerPokemon } from "../domain/model/PlayerPokemon";
-import { Gender } from "../domain/model/Pokemon";
+import {PlayerPokemon} from "../domain/model/PlayerPokemon";
+import {Gender} from "../domain/model/Pokemon";
 import * as IndividualValues from "../domain/model/IndividualValues";
 
 export const KiriphoritoPlayerPokemon: PlayerPokemon[] = [
-  new PlayerPokemon(46, Gender.Male, IndividualValues.fromAverageIV(93)),
-  new PlayerPokemon(46, Gender.Female, IndividualValues.fromAverageIV(80)),
-  new PlayerPokemon(46, Gender.Male,  IndividualValues.fromAverageIV(80))
+  {
+    dexId: 46,
+    playerId: 1,
+    gender: Gender.Male,
+    iv: IndividualValues.fromStats(15, 15, 13)
+  },
+  {
+    dexId: 46,
+    playerId: 1,
+    gender: Gender.Female,
+    iv: IndividualValues.fromStats(12, 12, 12)
+  },
+  {
+    dexId: 46,
+    playerId: 1,
+    gender: Gender.Male,
+    iv: IndividualValues.fromStats(12, 12, 12)
+  },
 ]
