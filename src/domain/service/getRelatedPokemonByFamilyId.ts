@@ -1,5 +1,5 @@
 import { Pokemon, fromPvPokePokemon } from '../model/Pokemon';
-import pokedex from '../../../data/pokemon.json';
+import pokedex from '../../../data/raw/pvpoke/pokemon.json';
 
 export function getRelatedPokemonByPokemonFamilyId(pokemon: Pokemon): Pokemon[] {
   if (!pokemon.family) {

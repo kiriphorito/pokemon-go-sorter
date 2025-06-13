@@ -1,6 +1,6 @@
 import { League } from "../domain/model/LeagueRanking";
-import greatLeagueOverallRankings from "../../data/great-overall-league.json";
-import ultraLeagueOverallRankings from "../../data/ultra-overall-league.json";
+import greatLeagueOverallRankings from "../../data/raw/pvpoke/great-overall-league.json";
+import ultraLeagueOverallRankings from "../../data/raw/pvpoke/ultra-overall-league.json";
 
 export function getLeagueRankings(league: League): any[] {
   switch(league) {

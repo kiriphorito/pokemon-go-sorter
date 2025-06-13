@@ -5,6 +5,6 @@ module.exports = {
     "^.+.tsx?$": ["ts-jest",{}],
   },
   testPathIgnorePatterns: ['<rootDir>/node_modules'],
-  testMatch: ['<rootDir>/src/**/*.spec.ts'],
+  testMatch: ['<rootDir>/src/**/*.spec.ts', '<rootDir>/data/**/*.spec.ts'],
   coveragePathIgnorePatterns: ['<rootDir>/src/test']
 };
