@@ -40938,3 +40938,34 @@
     "thirdMoveCost": 100000,
     "released": false
 }]
+THUNDER_SHOCK", "DRAGON_TAIL"],
+    "chargedMoves": ["HYPER_BEAM", "DRAGON_PULSE", "THUNDER", "OUTRAGE"],
+    "defaultIVs": {
+        "cp500": [5, 5, 9, 7],
+        "cp1500": [14, 5, 10, 10],
+        "cp2500": [23, 6, 14, 11]
+    },
+    "buddyDistance": 20,
+    "thirdMoveCost": 100000,
+    "released": false
+}, {
+    "dex": 1008,
+    "speciesName": "Miraidon_ultimate",
+    "speciesId": "miraidon_ultimate",
+    "baseStats": {
+        "atk": 263,
+        "def": 223,
+        "hp": 205
+    },
+    "types": ["electric", "dragon"],
+    "fastMoves": ["THUNDER_SHOCK", "DRAGON_TAIL"],
+    "chargedMoves": ["HYPER_BEAM", "DRAGON_PULSE", "THUNDER", "OUTRAGE"],
+    "defaultIVs": {
+        "cp500": [5, 5, 9, 7],
+        "cp1500": [14, 5, 10, 10],
+        "cp2500": [23, 6, 14, 11]
+    },
+    "buddyDistance": 20,
+    "thirdMoveCost": 100000,
+    "released": false
+}]
