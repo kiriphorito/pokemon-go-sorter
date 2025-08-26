@@ -3,7 +3,7 @@ import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 dotenv.config();
 
-import pokedex from '../data/pokemon.json';
+import pokedex from '../data/raw/pvpoke/pokemon.json';
 import { Pokemon, fromPvPokePokemon } from './domain/model/Pokemon';
 import { searchPokemon } from './domain/service/searchPokemon';
 import { haveEnoughAbove80IV } from './domain/service/rules/haveEnoughAbove80IV';
@@ -19,7 +19,7 @@ import playerPokemonRouter from "./presentation/PlayerPokemonRouter";
 
 
 import knexInstance from "./db/index";
-import {findPokemonByUserId} from "./infrastructure/persistance/JdbcPlayerPokemonRepository";
+import { findPokemonByPlayerId } from "./infrastructure/persistance/JdbcPlayerPokemonRepository";
 
 const app: Express = express();
 app.use(express.json())
@@ -32,7 +32,7 @@ knex.migrate.latest()
 app.use(playerPokemonRouter)
 
 app.get("/test", async (req, res) => {
-  findPokemonByUserId(2).then((result) => {
+  findPokemonByPlayerId(2).then((result) => {
     console.log(result);
     res.send(result);
   }).catch((error) => {

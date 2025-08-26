@@ -1,21 +1,24 @@
 import { PlayerPokemon } from "../model/PlayerPokemon";
-import { findPokemonByUserId, findByPlayerIdAndDexIds } from "../../infrastructure/persistance/JdbcPlayerPokemonRepository";
-import { findUserById } from "../../infrastructure/persistance/JdbcUserRepository";
+import {
+  findByPlayerIdAndDexIds,
+  findPokemonByPlayerId
+} from "../../infrastructure/persistance/JdbcPlayerPokemonRepository";
+import { findPlayerById } from "../../infrastructure/persistance/JdbcPlayerRepository";
 
-export const getPokemonsByPlayer = async (userId: number): Promise<PlayerPokemon[]> => {
-  const user = await findUserById(userId);
-  if (!user) {
-    throw new Error(`User with ID ${userId} not found`);
+export const getPokemonsByPlayer = async (playerId: number): Promise<PlayerPokemon[]> => {
+  const player = await findPlayerById(playerId);
+  if (!player) {
+    throw new Error(`Player with ID ${playerId} not found`);
   }
 
-  return await findPokemonByUserId(userId);
+  return await findPokemonByPlayerId(playerId);
 }
 
-export const getPlayersPokemonsByDexIds = async (userId: number, dexIds: number[]): Promise<PlayerPokemon[]> => {
-  const user = await findUserById(userId);
-  if (!user) {
-    throw new Error(`User with ID ${userId} not found`);
+export const getPlayersPokemonsByDexIds = async (playerId: number, dexIds: number[]): Promise<PlayerPokemon[]> => {
+  const player = await findPlayerById(playerId);
+  if (!player) {
+    throw new Error(`Player with ID ${playerId} not found`);
   }
 
-  return await findByPlayerIdAndDexIds(userId, dexIds);
+  return await findByPlayerIdAndDexIds(playerId, dexIds);
 }
