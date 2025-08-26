@@ -3,7 +3,6 @@ import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 dotenv.config();
 
-import pokedex from '../data/raw/pvpoke/filtered-pokemon.json';
 import { Pokemon, fromPvPokePokemon } from './domain/model/Pokemon';
 import { searchPokemon } from './domain/service/searchPokemon';
 import { haveEnoughAbove80IV } from './domain/service/rules/haveEnoughAbove80IV';
@@ -20,6 +19,7 @@ import playerPokemonRouter from "./presentation/PlayerPokemonRouter";
 
 import knexInstance from "./db/index";
 import { findPokemonByPlayerId } from "./infrastructure/persistance/JdbcPlayerPokemonRepository";
+import pokemonRouter from "./presentation/PokemonRouter";
 
 const app: Express = express();
 app.use(express.json())
@@ -30,6 +30,7 @@ const knex = knexInstance;
 knex.migrate.latest()
 
 app.use(playerPokemonRouter)
+app.use(pokemonRouter)
 
 app.get("/test", async (req, res) => {
   findPokemonByPlayerId(2).then((result) => {
@@ -42,7 +43,7 @@ app.get("/test", async (req, res) => {
 })
 
 app.get("/", (req: Request, res: Response) => {
-  res.send(pokedex[0]);
+  res.send({});
 });
 
 app.get("/iv/average", async (req: Request, res: Response) => {

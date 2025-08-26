@@ -1,4 +1,4 @@
-import pokedex from './filtered-pokemon.json';
+import pokedex from './output/pokemon.json';
 
 describe('pvpoke Data Assumptions test', () => {
   describe("Shadow Pokemon:",  () => {

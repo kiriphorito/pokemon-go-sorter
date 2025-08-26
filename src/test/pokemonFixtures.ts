@@ -1,8 +1,9 @@
-import { Pokemon, Stats, Family } from "../domain/model/Pokemon";
+import {Pokemon, Stats, Family, Gender} from "../domain/model/Pokemon";
 
 type FixtureConfig = {
   dex?: number,
   speciesName?: string,
+  genders? : Gender[],
   family?: Family,
 }
 
@@ -11,16 +12,7 @@ export function aPokemon(options?: FixtureConfig): Pokemon {
     options?.dex ? options.dex : 1,
     options?.speciesName ? options.speciesName : 'Pokemon A',
     "pokemon_a",
-    new Stats(1, 1, 1),
-    [],
-    [],
-    [],
-    [],
-    {},
-    100,
-    3,
-    100000,
-    true,
+    options?.genders ?? [Gender.Neutral],
     options?.family
   );
 }
