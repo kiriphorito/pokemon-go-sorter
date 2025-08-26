@@ -19,7 +19,7 @@ import playerPokemonRouter from "./presentation/PlayerPokemonRouter";
 
 
 import knexInstance from "./db/index";
-import {findPokemonByUserId} from "./infrastructure/persistance/JdbcPlayerPokemonRepository";
+import { findPokemonByPlayerId } from "./infrastructure/persistance/JdbcPlayerPokemonRepository";
 
 const app: Express = express();
 app.use(express.json())
@@ -32,7 +32,7 @@ knex.migrate.latest()
 app.use(playerPokemonRouter)
 
 app.get("/test", async (req, res) => {
-  findPokemonByUserId(2).then((result) => {
+  findPokemonByPlayerId(2).then((result) => {
     console.log(result);
     res.send(result);
   }).catch((error) => {

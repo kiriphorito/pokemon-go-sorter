@@ -4,7 +4,8 @@ export async function up(db: Knex): Promise<void> {
   if (!await db.schema.hasTable('player_pokemon')) {
     await db.schema.createTable('player_pokemon', (table) => {
       table.increments('id').primary();
-      table.integer('user_id').notNullable();
+      table.integer('player_id').notNullable();
+      table.boolean('active').notNullable().defaultTo('true');
       table.smallint('dex_id').notNullable();
       table.tinyint('attack_iv').notNullable();
       table.tinyint('defense_iv').notNullable();

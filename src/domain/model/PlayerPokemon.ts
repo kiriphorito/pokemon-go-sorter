@@ -5,6 +5,7 @@ export interface PlayerPokemon {
   id?: number;
   dexId: number;
   playerId: number;
+  active: boolean;
   iv: IndividualValues;
   gender?: Gender;
   weight?: number;
@@ -12,6 +13,11 @@ export interface PlayerPokemon {
   dateOfCapture?: Date;
   readonly createdAt?: Date;
   updatedAt?: Date;
+}
+
+export const markInactive = (playerPokemon: PlayerPokemon) => {
+  playerPokemon.active = false;
+  // TODO: Update updatedAt
 }
 
 export type PlayerPokemonKey = keyof PlayerPokemon;

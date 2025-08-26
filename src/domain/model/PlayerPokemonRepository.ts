@@ -1,7 +1,7 @@
 import { PlayerPokemon } from "./PlayerPokemon";
 
 export interface PlayerPokemonRepository {
-  getAll(userId: number): Promise<PlayerPokemon[]>;
-  getAllByDexIds(userId: number, dexIds: number[]): Promise<PlayerPokemon[]>;
+  getAll(playerId: number, isActive: boolean): Promise<PlayerPokemon[]>;
+  getAllByDexIds(playerId: number, dexIds: number[], isActive: boolean): Promise<PlayerPokemon[]>;
   save(playerPokemon: PlayerPokemon): Promise<void>;
 }
