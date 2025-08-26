@@ -1,4 +1,4 @@
-import pokedex from '../../../data/raw/pvpoke/pokemon.json';
+import pokedex from '../../../data/raw/pvpoke/filtered-pokemon.json';
 import { Pokemon, fromPvPokePokemon } from '../model/Pokemon';
 
 export function searchPokemon(search: string, isShadow?: boolean): Pokemon[] {
