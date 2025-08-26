@@ -3,7 +3,7 @@ import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 dotenv.config();
 
-import pokedex from '../data/raw/pvpoke/pokemon.json';
+import pokedex from '../data/raw/pvpoke/filtered-pokemon.json';
 import { Pokemon, fromPvPokePokemon } from './domain/model/Pokemon';
 import { searchPokemon } from './domain/service/searchPokemon';
 import { haveEnoughAbove80IV } from './domain/service/rules/haveEnoughAbove80IV';

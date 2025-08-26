@@ -1,16 +1,15 @@
-import pokedex from './pokemon.json';
+import pokedex from './filtered-pokemon.json';
 
 describe('pvpoke Data Assumptions test', () => {
   describe("Shadow Pokemon:",  () => {
-    it('for all shadow pokemon, there is a non-shadow equilvalent', async () => {
+    it('for all shadow pokemon, there is a non-shadow equivalent', async () => {
       const shadowPokemons = pokedex.filter((entry) => {
         return entry.speciesId.includes("_shadow");
       });
 
       for (const shadowPokemon of shadowPokemons) {
         const normalPokemon = pokedex.find((entry) => {
-          // TODO: Need to investigate giratina_altered_shadow_b
-          return entry.speciesId === shadowPokemon.speciesId.replace(/_shadow.*/, "");
+          return entry.speciesId === shadowPokemon.speciesId.replace(/_shadow/, "");
         });
 
         expect(normalPokemon).toBeDefined();
@@ -24,8 +23,7 @@ describe('pvpoke Data Assumptions test', () => {
 
       for (const shadowPokemon of shadowPokemons) {
         const normalPokemon = pokedex.find((entry) => {
-          // TODO: Need to investigate giratina_altered_shadow_b
-          return entry.speciesId === shadowPokemon.speciesId.replace(/_shadow.*/, "");
+          return entry.speciesId === shadowPokemon.speciesId.replace(/_shadow/, "");
         });
 
         expect(normalPokemon?.baseStats).toEqual(shadowPokemon.baseStats);
