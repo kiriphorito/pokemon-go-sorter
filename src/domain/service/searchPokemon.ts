@@ -1,7 +1,7 @@
-import pokedex from '../../../data/raw/pvpoke/filtered-pokemon.json';
+import pokedex from '../../../data/processed/pokemon.json';
 import { Pokemon, fromPvPokePokemon } from '../model/Pokemon';
 
-export function searchPokemon(search: string, isShadow?: boolean): Pokemon[] {
+export const searchPokemon = (search: string, isShadow?: boolean): Pokemon[] => {
   if (!search) {
     throw new Error("Search term is blank!")
   }
