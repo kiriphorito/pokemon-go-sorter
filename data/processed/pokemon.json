@@ -8335,6 +8335,20 @@
     ]
   },
   {
+    "dex": 211,
+    "speciesName": "Qwilfish (Shadow)",
+    "speciesId": "qwilfish_shadow",
+    "baseStats": {
+      "atk": 184,
+      "def": 138,
+      "hp": 163
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
     "dex": 212,
     "speciesName": "Scizor",
     "speciesId": "scizor",
@@ -11777,6 +11791,24 @@
   },
   {
     "dex": 319,
+    "speciesName": "Sharpedo (Mega)",
+    "speciesId": "sharpedo_mega",
+    "baseStats": {
+      "atk": 289,
+      "def": 144,
+      "hp": 172
+    },
+    "family": {
+      "id": "FAMILY_CARVANHA",
+      "parent": "carvanha"
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 319,
     "speciesName": "Sharpedo (Shadow)",
     "speciesId": "sharpedo_shadow",
     "baseStats": {
@@ -11916,6 +11948,24 @@
     "baseStats": {
       "atk": 194,
       "def": 136,
+      "hp": 172
+    },
+    "family": {
+      "id": "FAMILY_NUMEL",
+      "parent": "numel"
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 323,
+    "speciesName": "Camerupt (Mega)",
+    "speciesId": "camerupt_mega",
+    "baseStats": {
+      "atk": 253,
+      "def": 183,
       "hp": 172
     },
     "family": {
@@ -12264,6 +12314,26 @@
     ]
   },
   {
+    "dex": 333,
+    "speciesName": "Swablu (Shadow)",
+    "speciesId": "swablu_shadow",
+    "baseStats": {
+      "atk": 76,
+      "def": 132,
+      "hp": 128
+    },
+    "family": {
+      "id": "FAMILY_SWABLU",
+      "evolutions": [
+        "altaria_shadow"
+      ]
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
     "dex": 334,
     "speciesName": "Altaria",
     "speciesId": "altaria",
@@ -12293,6 +12363,24 @@
     "family": {
       "id": "FAMILY_SWABLU",
       "parent": "swablu"
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 334,
+    "speciesName": "Altaria (Shadow)",
+    "speciesId": "altaria_shadow",
+    "baseStats": {
+      "atk": 141,
+      "def": 201,
+      "hp": 181
+    },
+    "family": {
+      "id": "FAMILY_SWABLU",
+      "parent": "swablu_shadow"
     },
     "genders": [
       "MALE",
@@ -12525,6 +12613,25 @@
     ]
   },
   {
+    "dex": 343,
+    "speciesName": "Baltoy (Shadow)",
+    "speciesId": "baltoy_shadow",
+    "baseStats": {
+      "atk": 77,
+      "def": 124,
+      "hp": 120
+    },
+    "family": {
+      "id": "FAMILY_BALTOY",
+      "evolutions": [
+        "claydol_shadow"
+      ]
+    },
+    "genders": [
+      "NEUTRAL"
+    ]
+  },
+  {
     "dex": 344,
     "speciesName": "Claydol",
     "speciesId": "claydol",
@@ -12536,6 +12643,23 @@
     "family": {
       "id": "FAMILY_BALTOY",
       "parent": "baltoy"
+    },
+    "genders": [
+      "NEUTRAL"
+    ]
+  },
+  {
+    "dex": 344,
+    "speciesName": "Claydol (Shadow)",
+    "speciesId": "claydol_shadow",
+    "baseStats": {
+      "atk": 140,
+      "def": 229,
+      "hp": 155
+    },
+    "family": {
+      "id": "FAMILY_BALTOY",
+      "parent": "baltoy_shadow"
     },
     "genders": [
       "NEUTRAL"
@@ -12714,6 +12838,26 @@
     ]
   },
   {
+    "dex": 349,
+    "speciesName": "Feebas (Shadow)",
+    "speciesId": "feebas_shadow",
+    "baseStats": {
+      "atk": 29,
+      "def": 85,
+      "hp": 85
+    },
+    "family": {
+      "id": "FAMILY_FEEBAS",
+      "evolutions": [
+        "milotic_shadow"
+      ]
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
     "dex": 350,
     "speciesName": "Milotic",
     "speciesId": "milotic",
@@ -12725,6 +12869,24 @@
     "family": {
       "id": "FAMILY_FEEBAS",
       "parent": "feebas"
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 350,
+    "speciesName": "Milotic (Shadow)",
+    "speciesId": "milotic_shadow",
+    "baseStats": {
+      "atk": 192,
+      "def": 219,
+      "hp": 216
+    },
+    "family": {
+      "id": "FAMILY_FEEBAS",
+      "parent": "feebas_shadow"
     },
     "genders": [
       "MALE",
@@ -13579,6 +13741,23 @@
     "baseStats": {
       "atk": 257,
       "def": 228,
+      "hp": 190
+    },
+    "family": {
+      "id": "FAMILY_BELDUM",
+      "parent": "metang"
+    },
+    "genders": [
+      "NEUTRAL"
+    ]
+  },
+  {
+    "dex": 376,
+    "speciesName": "Metagross (Mega)",
+    "speciesId": "metagross_mega",
+    "baseStats": {
+      "atk": 300,
+      "def": 289,
       "hp": 190
     },
     "family": {
@@ -21505,6 +21684,26 @@
     ]
   },
   {
+    "dex": 633,
+    "speciesName": "Deino (Shadow)",
+    "speciesId": "deino_shadow",
+    "baseStats": {
+      "atk": 116,
+      "def": 93,
+      "hp": 141
+    },
+    "family": {
+      "id": "FAMILY_DEINO",
+      "evolutions": [
+        "zweilous_shadow"
+      ]
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
     "dex": 634,
     "speciesName": "Zweilous",
     "speciesId": "zweilous",
@@ -21526,6 +21725,27 @@
     ]
   },
   {
+    "dex": 634,
+    "speciesName": "Zweilous (Shadow)",
+    "speciesId": "zweilous_shadow",
+    "baseStats": {
+      "atk": 159,
+      "def": 135,
+      "hp": 176
+    },
+    "family": {
+      "id": "FAMILY_DEINO",
+      "parent": "deino_shadow",
+      "evolutions": [
+        "hydreigon_shadow"
+      ]
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
     "dex": 635,
     "speciesName": "Hydreigon",
     "speciesId": "hydreigon",
@@ -21537,6 +21757,24 @@
     "family": {
       "id": "FAMILY_DEINO",
       "parent": "zweilous"
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 635,
+    "speciesName": "Hydreigon (Shadow)",
+    "speciesId": "hydreigon_shadow",
+    "baseStats": {
+      "atk": 256,
+      "def": 188,
+      "hp": 211
+    },
+    "family": {
+      "id": "FAMILY_DEINO",
+      "parent": "zweilous_shadow"
     },
     "genders": [
       "MALE",
@@ -21624,6 +21862,19 @@
     "dex": 641,
     "speciesName": "Tornadus (Incarnate)",
     "speciesId": "tornadus_incarnate",
+    "baseStats": {
+      "atk": 266,
+      "def": 164,
+      "hp": 188
+    },
+    "genders": [
+      "MALE"
+    ]
+  },
+  {
+    "dex": 641,
+    "speciesName": "Tornadus (Incarnate) (Shadow)",
+    "speciesId": "tornadus_incarnate_shadow",
     "baseStats": {
       "atk": 266,
       "def": 164,
@@ -26964,19 +27215,6 @@
     "genders": [
       "MALE",
       "FEMALE"
-    ]
-  },
-  {
-    "dex": 876,
-    "speciesName": "Indeedee",
-    "speciesId": "indeedee",
-    "baseStats": {
-      "atk": 208,
-      "def": 166,
-      "hp": 155
-    },
-    "genders": [
-      "MALE"
     ]
   },
   {
