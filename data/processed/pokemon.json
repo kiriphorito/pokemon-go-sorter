@@ -8125,6 +8125,12 @@
       "def": 128,
       "hp": 225
     },
+    "family": {
+      "id": "FAMILY_DUNSPARCE",
+      "evolutions": [
+        "dudunsparce"
+      ]
+    },
     "genders": [
       "MALE",
       "FEMALE"
@@ -29446,42 +29452,6 @@
     "dex": 982,
     "speciesName": "Dudunsparce",
     "speciesId": "dudunsparce",
-    "baseStats": {
-      "atk": 188,
-      "def": 150,
-      "hp": 268
-    },
-    "family": {
-      "id": "FAMILY_DUNSPARCE",
-      "parent": "dunsparce"
-    },
-    "genders": [
-      "MALE",
-      "FEMALE"
-    ]
-  },
-  {
-    "dex": 982,
-    "speciesName": "Dudunsparce_three",
-    "speciesId": "dudunsparce_three",
-    "baseStats": {
-      "atk": 188,
-      "def": 150,
-      "hp": 268
-    },
-    "family": {
-      "id": "FAMILY_DUNSPARCE",
-      "parent": "dunsparce"
-    },
-    "genders": [
-      "MALE",
-      "FEMALE"
-    ]
-  },
-  {
-    "dex": 982,
-    "speciesName": "Dudunsparce_two",
-    "speciesId": "dudunsparce_two",
     "baseStats": {
       "atk": 188,
       "def": 150,
