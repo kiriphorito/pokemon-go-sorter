@@ -8125,6 +8125,12 @@
       "def": 128,
       "hp": 225
     },
+    "family": {
+      "id": "FAMILY_DUNSPARCE",
+      "evolutions": [
+        "dudunsparce"
+      ]
+    },
     "genders": [
       "MALE",
       "FEMALE"
@@ -17373,6 +17379,19 @@
     ]
   },
   {
+    "dex": 491,
+    "speciesName": "Darkrai (Shadow)",
+    "speciesId": "darkrai_shadow",
+    "baseStats": {
+      "atk": 285,
+      "def": 198,
+      "hp": 172
+    },
+    "genders": [
+      "NEUTRAL"
+    ]
+  },
+  {
     "dex": 492,
     "speciesName": "Shaymin (Land)",
     "speciesId": "shaymin_land",
@@ -19744,6 +19763,26 @@
     ]
   },
   {
+    "dex": 562,
+    "speciesName": "Yamask (Shadow)",
+    "speciesId": "yamask_shadow",
+    "baseStats": {
+      "atk": 95,
+      "def": 141,
+      "hp": 116
+    },
+    "family": {
+      "id": "FAMILY_YAMASK",
+      "evolutions": [
+        "cofagrigus_shadow"
+      ]
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
     "dex": 563,
     "speciesName": "Cofagrigus",
     "speciesId": "cofagrigus",
@@ -19755,6 +19794,24 @@
     "family": {
       "id": "FAMILY_YAMASK",
       "parent": "yamask"
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 563,
+    "speciesName": "Cofagrigus (Shadow)",
+    "speciesId": "cofagrigus_shadow",
+    "baseStats": {
+      "atk": 163,
+      "def": 237,
+      "hp": 151
+    },
+    "family": {
+      "id": "FAMILY_YAMASK",
+      "parent": "yamask_shadow"
     },
     "genders": [
       "MALE",
@@ -23487,6 +23544,26 @@
     ]
   },
   {
+    "dex": 708,
+    "speciesName": "Phantump (Shadow)",
+    "speciesId": "phantump_shadow",
+    "baseStats": {
+      "atk": 125,
+      "def": 103,
+      "hp": 125
+    },
+    "family": {
+      "id": "FAMILY_PHANTUMP",
+      "evolutions": [
+        "trevenant_shadow"
+      ]
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
     "dex": 709,
     "speciesName": "Trevenant",
     "speciesId": "trevenant",
@@ -23498,6 +23575,24 @@
     "family": {
       "id": "FAMILY_PHANTUMP",
       "parent": "phantump"
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 709,
+    "speciesName": "Trevenant (Shadow)",
+    "speciesId": "trevenant_shadow",
+    "baseStats": {
+      "atk": 201,
+      "def": 154,
+      "hp": 198
+    },
+    "family": {
+      "id": "FAMILY_PHANTUMP",
+      "parent": "phantump_shadow"
     },
     "genders": [
       "MALE",
@@ -26501,7 +26596,8 @@
       "id": "FAMILY_APPLIN",
       "evolutions": [
         "flapple",
-        "appletun"
+        "appletun",
+        "dipplin"
       ]
     },
     "genders": [
@@ -27369,6 +27465,12 @@
       "atk": 239,
       "def": 185,
       "hp": 172
+    },
+    "family": {
+      "id": "FAMILY_DURALUDON",
+      "evolutions": [
+        "archaludon"
+      ]
     },
     "genders": [
       "MALE",
@@ -29461,42 +29563,6 @@
     ]
   },
   {
-    "dex": 982,
-    "speciesName": "Dudunsparce_three",
-    "speciesId": "dudunsparce_three",
-    "baseStats": {
-      "atk": 188,
-      "def": 150,
-      "hp": 268
-    },
-    "family": {
-      "id": "FAMILY_DUNSPARCE",
-      "parent": "dunsparce"
-    },
-    "genders": [
-      "MALE",
-      "FEMALE"
-    ]
-  },
-  {
-    "dex": 982,
-    "speciesName": "Dudunsparce_two",
-    "speciesId": "dudunsparce_two",
-    "baseStats": {
-      "atk": 188,
-      "def": 150,
-      "hp": 268
-    },
-    "family": {
-      "id": "FAMILY_DUNSPARCE",
-      "parent": "dunsparce"
-    },
-    "genders": [
-      "MALE",
-      "FEMALE"
-    ]
-  },
-  {
     "dex": 983,
     "speciesName": "Kingambit",
     "speciesId": "kingambit",
@@ -29890,6 +29956,256 @@
       "atk": 263,
       "def": 223,
       "hp": 205
+    },
+    "genders": [
+      "NEUTRAL"
+    ]
+  },
+  {
+    "dex": 1009,
+    "speciesName": "Walking Wake",
+    "speciesId": "walking_wake",
+    "baseStats": {
+      "atk": 233,
+      "def": 171,
+      "hp": 203
+    },
+    "genders": [
+      "NEUTRAL"
+    ]
+  },
+  {
+    "dex": 1010,
+    "speciesName": "Iron Leaves",
+    "speciesId": "iron_leaves",
+    "baseStats": {
+      "atk": 236,
+      "def": 194,
+      "hp": 189
+    },
+    "genders": [
+      "NEUTRAL"
+    ]
+  },
+  {
+    "dex": 1011,
+    "speciesName": "Dipplin",
+    "speciesId": "dipplin",
+    "baseStats": {
+      "atk": 173,
+      "def": 184,
+      "hp": 190
+    },
+    "family": {
+      "id": "FAMILY_APPLIN",
+      "parent": "applin",
+      "evolutions": [
+        "hydrapple"
+      ]
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 1012,
+    "speciesName": "Poltchageist",
+    "speciesId": "poltchageist",
+    "baseStats": {
+      "atk": 134,
+      "def": 96,
+      "hp": 120
+    },
+    "family": {
+      "id": "FAMILY_SINISTCHA",
+      "parent": "sinistcha"
+    },
+    "genders": [
+      "NEUTRAL"
+    ]
+  },
+  {
+    "dex": 1013,
+    "speciesName": "Sinistcha",
+    "speciesId": "sinistcha",
+    "baseStats": {
+      "atk": 225,
+      "def": 191,
+      "hp": 174
+    },
+    "family": {
+      "id": "FAMILY_SINISTCHA",
+      "evolutions": [
+        "poltchageist"
+      ]
+    },
+    "genders": [
+      "NEUTRAL"
+    ]
+  },
+  {
+    "dex": 1014,
+    "speciesName": "Okidogi",
+    "speciesId": "okidogi",
+    "baseStats": {
+      "atk": 220,
+      "def": 191,
+      "hp": 186
+    },
+    "genders": [
+      "MALE"
+    ]
+  },
+  {
+    "dex": 1015,
+    "speciesName": "Munkidori",
+    "speciesId": "munkidori",
+    "baseStats": {
+      "atk": 238,
+      "def": 157,
+      "hp": 186
+    },
+    "genders": [
+      "MALE"
+    ]
+  },
+  {
+    "dex": 1016,
+    "speciesName": "Fezandipiti",
+    "speciesId": "fezandipiti",
+    "baseStats": {
+      "atk": 169,
+      "def": 208,
+      "hp": 186
+    },
+    "genders": [
+      "MALE"
+    ]
+  },
+  {
+    "dex": 1017,
+    "speciesName": "Ogerpon",
+    "speciesId": "ogerpon",
+    "baseStats": {
+      "atk": 219,
+      "def": 178,
+      "hp": 173
+    },
+    "genders": [
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 1018,
+    "speciesName": "Archaludon",
+    "speciesId": "archaludon",
+    "baseStats": {
+      "atk": 250,
+      "def": 215,
+      "hp": 207
+    },
+    "family": {
+      "id": "FAMILY_DURALUDON",
+      "parent": "duraludon"
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 1019,
+    "speciesName": "Hydrapple",
+    "speciesId": "hydrapple",
+    "baseStats": {
+      "atk": 216,
+      "def": 186,
+      "hp": 235
+    },
+    "family": {
+      "id": "FAMILY_APPLIN",
+      "parent": "dipplin"
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 1020,
+    "speciesName": "Gouging Fire",
+    "speciesId": "gouging_fire",
+    "baseStats": {
+      "atk": 205,
+      "def": 208,
+      "hp": 213
+    },
+    "genders": [
+      "NEUTRAL"
+    ]
+  },
+  {
+    "dex": 1021,
+    "speciesName": "Raging Bolt",
+    "speciesId": "raging_bolt",
+    "baseStats": {
+      "atk": 235,
+      "def": 165,
+      "hp": 245
+    },
+    "genders": [
+      "NEUTRAL"
+    ]
+  },
+  {
+    "dex": 1022,
+    "speciesName": "Iron Boulder",
+    "speciesId": "iron_boulder",
+    "baseStats": {
+      "atk": 227,
+      "def": 195,
+      "hp": 189
+    },
+    "genders": [
+      "NEUTRAL"
+    ]
+  },
+  {
+    "dex": 1023,
+    "speciesName": "Iron Crown",
+    "speciesId": "iron_crown",
+    "baseStats": {
+      "atk": 221,
+      "def": 200,
+      "hp": 189
+    },
+    "genders": [
+      "NEUTRAL"
+    ]
+  },
+  {
+    "dex": 1024,
+    "speciesName": "Terapagos",
+    "speciesId": "terapagos",
+    "baseStats": {
+      "atk": 126,
+      "def": 165,
+      "hp": 207
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 1025,
+    "speciesName": "Pecharunt",
+    "speciesId": "pecharunt",
+    "baseStats": {
+      "atk": 164,
+      "def": 248,
+      "hp": 186
     },
     "genders": [
       "NEUTRAL"
