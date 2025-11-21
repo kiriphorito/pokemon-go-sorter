@@ -100,7 +100,9 @@ const pvpokeToPokemonDbMapper = {
   "roaringmoon": "roaring-moon",
   "ironvaliant": "iron-valiant",
   "koraidon_apex": "koraidon",
-  "miraidon_ultimate": "miraidon"
+  "miraidon_ultimate": "miraidon",
+  "ogerpon": "ogerpon-teal",
+  "terapagos": "terapagos-normal"
 }
 
 const getGenders = (pvpokeSpeciesId) => {
