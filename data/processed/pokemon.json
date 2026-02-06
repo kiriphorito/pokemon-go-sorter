@@ -3594,6 +3594,26 @@
     ]
   },
   {
+    "dex": 77,
+    "speciesName": "Ponyta (Shadow)",
+    "speciesId": "ponyta_shadow",
+    "baseStats": {
+      "atk": 170,
+      "def": 127,
+      "hp": 137
+    },
+    "family": {
+      "id": "FAMILY_PONYTA",
+      "evolutions": [
+        "rapidash_shadow"
+      ]
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
     "dex": 78,
     "speciesName": "Rapidash",
     "speciesId": "rapidash",
@@ -3623,6 +3643,24 @@
     "family": {
       "id": "FAMILY_PONYTA",
       "parent": "ponyta_galarian"
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 78,
+    "speciesName": "Rapidash (Shadow)",
+    "speciesId": "rapidash_shadow",
+    "baseStats": {
+      "atk": 207,
+      "def": 162,
+      "hp": 163
+    },
+    "family": {
+      "id": "FAMILY_PONYTA",
+      "parent": "ponyta_shadow"
     },
     "genders": [
       "MALE",
@@ -5991,6 +6029,26 @@
     ]
   },
   {
+    "dex": 140,
+    "speciesName": "Kabuto (Shadow)",
+    "speciesId": "kabuto_shadow",
+    "baseStats": {
+      "atk": 148,
+      "def": 140,
+      "hp": 102
+    },
+    "family": {
+      "id": "FAMILY_KABUTO",
+      "evolutions": [
+        "kabutops_shadow"
+      ]
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
     "dex": 141,
     "speciesName": "Kabutops",
     "speciesId": "kabutops",
@@ -6002,6 +6060,24 @@
     "family": {
       "id": "FAMILY_KABUTO",
       "parent": "kabuto"
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 141,
+    "speciesName": "Kabutops (Shadow)",
+    "speciesId": "kabutops_shadow",
+    "baseStats": {
+      "atk": 220,
+      "def": 186,
+      "hp": 155
+    },
+    "family": {
+      "id": "FAMILY_KABUTO",
+      "parent": "kabuto_shadow"
     },
     "genders": [
       "MALE",
@@ -21969,6 +22045,19 @@
   },
   {
     "dex": 642,
+    "speciesName": "Thundurus (Incarnate) (Shadow)",
+    "speciesId": "thundurus_incarnate_shadow",
+    "baseStats": {
+      "atk": 266,
+      "def": 164,
+      "hp": 188
+    },
+    "genders": [
+      "MALE"
+    ]
+  },
+  {
+    "dex": 642,
     "speciesName": "Thundurus (Therian)",
     "speciesId": "thundurus_therian",
     "baseStats": {
@@ -22209,6 +22298,26 @@
     ]
   },
   {
+    "dex": 650,
+    "speciesName": "Chespin (Shadow)",
+    "speciesId": "chespin_shadow",
+    "baseStats": {
+      "atk": 110,
+      "def": 106,
+      "hp": 148
+    },
+    "family": {
+      "id": "FAMILY_CHESPIN",
+      "evolutions": [
+        "quilladin_shadow"
+      ]
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
     "dex": 651,
     "speciesName": "Quilladin",
     "speciesId": "quilladin",
@@ -22222,6 +22331,27 @@
       "parent": "chespin",
       "evolutions": [
         "chesnaught"
+      ]
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 651,
+    "speciesName": "Quilladin (Shadow)",
+    "speciesId": "quilladin_shadow",
+    "baseStats": {
+      "atk": 146,
+      "def": 156,
+      "hp": 156
+    },
+    "family": {
+      "id": "FAMILY_CHESPIN",
+      "parent": "chespin_shadow",
+      "evolutions": [
+        "chesnaught_shadow"
       ]
     },
     "genders": [
@@ -22248,6 +22378,24 @@
     ]
   },
   {
+    "dex": 652,
+    "speciesName": "Chesnaught (Shadow)",
+    "speciesId": "chesnaught_shadow",
+    "baseStats": {
+      "atk": 201,
+      "def": 204,
+      "hp": 204
+    },
+    "family": {
+      "id": "FAMILY_CHESPIN",
+      "parent": "quilladin_shadow"
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
     "dex": 653,
     "speciesName": "Fennekin",
     "speciesId": "fennekin",
@@ -22260,6 +22408,26 @@
       "id": "FAMILY_FENNEKIN",
       "evolutions": [
         "braixen"
+      ]
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 653,
+    "speciesName": "Fennekin (Shadow)",
+    "speciesId": "fennekin_shadow",
+    "baseStats": {
+      "atk": 116,
+      "def": 102,
+      "hp": 120
+    },
+    "family": {
+      "id": "FAMILY_FENNEKIN",
+      "evolutions": [
+        "braixen_shadow"
       ]
     },
     "genders": [
@@ -22289,6 +22457,27 @@
     ]
   },
   {
+    "dex": 654,
+    "speciesName": "Braixen (Shadow)",
+    "speciesId": "braixen_shadow",
+    "baseStats": {
+      "atk": 171,
+      "def": 130,
+      "hp": 153
+    },
+    "family": {
+      "id": "FAMILY_FENNEKIN",
+      "parent": "fennekin_shadow",
+      "evolutions": [
+        "delphox_shadow"
+      ]
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
     "dex": 655,
     "speciesName": "Delphox",
     "speciesId": "delphox",
@@ -22300,6 +22489,24 @@
     "family": {
       "id": "FAMILY_FENNEKIN",
       "parent": "braixen"
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 655,
+    "speciesName": "Delphox (Shadow)",
+    "speciesId": "delphox_shadow",
+    "baseStats": {
+      "atk": 230,
+      "def": 189,
+      "hp": 181
+    },
+    "family": {
+      "id": "FAMILY_FENNEKIN",
+      "parent": "braixen_shadow"
     },
     "genders": [
       "MALE",
@@ -22319,6 +22526,26 @@
       "id": "FAMILY_FROAKIE",
       "evolutions": [
         "frogadier"
+      ]
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 656,
+    "speciesName": "Froakie (Shadow)",
+    "speciesId": "froakie_shadow",
+    "baseStats": {
+      "atk": 122,
+      "def": 84,
+      "hp": 121
+    },
+    "family": {
+      "id": "FAMILY_FROAKIE",
+      "evolutions": [
+        "frogadier_shadow"
       ]
     },
     "genders": [
@@ -22348,6 +22575,27 @@
     ]
   },
   {
+    "dex": 657,
+    "speciesName": "Frogadier (Shadow)",
+    "speciesId": "frogadier_shadow",
+    "baseStats": {
+      "atk": 168,
+      "def": 114,
+      "hp": 144
+    },
+    "family": {
+      "id": "FAMILY_FROAKIE",
+      "parent": "froakie_shadow",
+      "evolutions": [
+        "greninja_shadow"
+      ]
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
     "dex": 658,
     "speciesName": "Greninja",
     "speciesId": "greninja",
@@ -22359,6 +22607,24 @@
     "family": {
       "id": "FAMILY_FROAKIE",
       "parent": "frogadier"
+    },
+    "genders": [
+      "MALE",
+      "FEMALE"
+    ]
+  },
+  {
+    "dex": 658,
+    "speciesName": "Greninja (Shadow)",
+    "speciesId": "greninja_shadow",
+    "baseStats": {
+      "atk": 223,
+      "def": 152,
+      "hp": 176
+    },
+    "family": {
+      "id": "FAMILY_FROAKIE",
+      "parent": "frogadier_shadow"
     },
     "genders": [
       "MALE",
