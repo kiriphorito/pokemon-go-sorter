@@ -23,6 +23,15 @@ jobs:
         run: docker build -t ${{ github.event.repository.name }}:${{ steps.output_sha.outputs.sha }} .
       - name: "Export docker image to tar"
         run: docker save ${{ github.event.repository.name }}:${{ steps.output_sha.outputs.sha }} > ${{ github.event.repository.name }}_${{ steps.output_sha.outputs.sha }}.tar
+      - name: Setup AWS CLI
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+      - name: Sync files to S3 bucket
+        run: |
+          aws s3 cp ${{ github.event.repository.name }}_${{ steps.output_sha.outputs.sha }}.tar s3://${{ secrets.BUCKET_NAME }}/docker_images/
       - name: "Persist tar"
         uses: actions/upload-artifact@v4
         with:
